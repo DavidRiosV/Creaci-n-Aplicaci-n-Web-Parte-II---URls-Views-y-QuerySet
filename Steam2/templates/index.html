@@ -1,0 +1,16 @@
+<!-- Menu de inicio desde el cual puedes acceder a urls del proyecto -->
+<html>
+    <head>
+        <title>Steam2 - Home</title>
+    </head>
+    <body>
+        <h1>Steam2</h1>
+        
+        <h2>Enlaces</h2>
+        <ul>
+            <li><a href="{% url 'listar_juegos' %}">Juego</a></li>
+            <li><a href="{% url 'listar_perfil' alias='user-juan' %}">Ver perfil de usuario</a></li>
+            <li><a href="{% url 'listar_amigos' usuario_id=2 %}">Ver amigos de un usuario</a></li>  <!-- Enlace para ver amigos -->
+        </ul>
+    </body>
+</html>

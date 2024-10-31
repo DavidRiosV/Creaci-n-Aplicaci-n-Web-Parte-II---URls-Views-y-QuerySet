@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil de Usuario</title>
+</head>
+<body>
+    <h1>Perfil de Usuario</h1>
+    <h2>Información del Usuario</h2>
+    <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+    <p><strong>Saldo:</strong> {{ usuario.saldo }}</p>
+
+    <h2>Información del Perfil</h2>
+    <p><strong>Alias:</strong> {{ perfil.alias }}</p>
+    <p><strong>Fecha de Creación:</strong> {{ perfil.fecha_creacion }}</p>
+    <p><strong>Última Conexión:</strong> {{ perfil.ultima_conexion }}</p>
+    <p><strong>Visibilidad:</strong> {{ perfil.visibilidad|yesno:"Visible,No Visible" }}</p>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Juegos</title>
+    <!-- este "css" sobra es solo para mejorar la parte visual -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .juego-lista {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .juego {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .juego:last-child {
+            border-bottom: none; /* Eliminar borde en el último juego */
+        }
+        .juego strong {
+            display: inline-block;
+            width: 200px; /* Espaciado para etiquetas */
+        }
+        .juego-info {
+            margin-bottom: 10px;
+        }
+        @media (max-width: 600px) {
+            .juego {
+                padding: 5px 0;
+            }
+            .juego strong {
+                width: 150px; /* Ajustar el ancho en pantallas pequeñas */
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Lista de Juegos</h1>
+    <div class="juego-lista">
+        {% for juego in juegos %}
+            <div class="juego">
+                <div class="juego-info">
+                    <strong>Nombre:</strong> {{ juego.nombre }}
+                </div>
+                <div class="juego-info">
+                    <strong>Precio:</strong> ${{ juego.precio|floatformat:2 }} <!-- Formato para precios -->
+                </div>
+                <div class="juego-info">
+                    <strong>Fecha de Lanzamiento:</strong> {{ juego.fecha_lanzamiento|date:"Y-m-d" }}
+                </div>
+                <div class="juego-info">
+                    <strong>Clasificación de Edad:</strong> {{ juego.get_clasificacion_edad_display }}
+                </div>
+                <div class="juego-info">
+                    <strong>Distribuidora:</strong> {{ juego.distribuidora.nombre }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Amigos de {{ usuario.nombre }}</title>
+</head>
+<body>
+    <h1>Amigos de {{ usuario.nombre }}</h1>
+    <ul>
+        {% for amigo in amigos %}
+            <li>El usuario cuya id es {{ amigo.id }} es su amigo.</li>  
+        {% empty %}
+            <li>No tienes amigos en tu lista.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index_html' %}">Volver al inicio</a>
+</body>
+</html>

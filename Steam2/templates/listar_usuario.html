@@ -1,0 +1,22 @@
+<!-- Lista de todos los usuarios de mi proyecto y sus datos -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Usuario</title>
+</head>
+<body>
+    <h1>Lista de Usuario</h1>
+    <ul>
+        {% for usuario in usuario  %}
+            <li>
+                <strong>Nombre:</strong> {{ usuario.nombre }}<br>
+                <strong>Saldo:</strong> {{ usuario.saldo }}<br>
+                <strong>Fecha de inicio:</strong> {{ usuario.fecha_registro }}
+            </li>
+            <hr>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
